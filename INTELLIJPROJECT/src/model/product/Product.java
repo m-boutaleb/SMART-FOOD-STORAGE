@@ -1,12 +1,10 @@
 package model.product;
 
-import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
 
 /**
  * Associazione prodotto sezione avviene tramite i primi numeri del product-barcode. Se il bar-code
- * ha come primo elemento un numero compreso tra 0-3 ed è diverso da uno incontrato precedentemente
+ * ha come primo elemento un numero compreso tra 0-3 ed e' diverso da uno incontrato precedentemente
  * allora vuoldire che appartiene alla categoria n dove n[0-3]:
  * 0: FreezeProduct
  * 1: FreshProduct
@@ -14,34 +12,21 @@ import java.util.Set;
  * 3: OtherProduct
  */
 public abstract class Product {
-    public Set<ProductCategory> getProductCategories() {
-        return productCategories;
-    }
-
-    private final Set<ProductCategory> productCategories;
     private final long barCode;
     private final String description;
-    private final int quantity;
+    private int quantity;
     private final double weight;
-    
-    public Product(final long barCode, final  String description, final int quantity, final double weight) {
+    private final String productType;
+
+    protected Product(final long barCode, final String description, final double weight, final String productType) {
         this.barCode = barCode;
         this.description = description;
-        this.quantity = quantity;
-        this.weight=weight;
-        this.productCategories =getCategoriesByBarCode(barCode);
+        this.weight = weight;
+        this.productType = productType;
     }
 
-    private Set<ProductCategory> getCategoriesByBarCode(final long barcode){
-        var barcodeStr=String.valueOf(barcode);
-        var categories= new HashSet<ProductCategory>();
-        int value;
-        var stop=false;
-        for(int i=0 ; i<4 && !stop; i++)
-            stop =(value = Integer.parseInt((String.valueOf(barcodeStr.charAt(i)))))> 3 || !categories.add(value == 0 ?
-                    ProductCategory.FREEZEPRODUCT : value == 1 ? ProductCategory.FRESHPRODUCT
-                    : value == 2 ? ProductCategory.CELLARPRODUCT : ProductCategory.PANTRYPRODUCT);
-        return categories;
+    public String getProductType() {
+        return productType;
     }
 
     public double getWeight() {
@@ -60,11 +45,14 @@ public abstract class Product {
         return quantity;
     }
 
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
-                "productTypes=" + productCategories +
-                ", barCode=" + barCode +
+                "barCode=" + barCode +
                 ", description='" + description + '\'' +
                 ", quantity=" + quantity +
                 ", weight=" + weight +
@@ -81,6 +69,6 @@ public abstract class Product {
 
     @Override
     public int hashCode() {
-        return Objects.hash(productCategories);
+        return Objects.hash(barCode, description, quantity, weight);
     }
 }

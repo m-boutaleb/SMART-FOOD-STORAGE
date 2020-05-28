@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="SensorSimulator-1.5">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../lib/SensorSimulator-1.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../lib/InfluxConnector-V1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../lib/GrovePi-pi4j-complete.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

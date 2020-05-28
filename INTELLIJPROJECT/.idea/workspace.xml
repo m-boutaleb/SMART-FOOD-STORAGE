@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d62a2d8e-293c-432f-8cca-56fb10b8df75" name="Default Changelist" comment="" />
+    <list default="true" id="d62a2d8e-293c-432f-8cca-56fb10b8df75" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/SensorSimulator_1_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/product/ProductCellarable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/product/ProductFreezable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/product/ProductFreshable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/product/ProductPantriable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/type/LiquidProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/type/SolidProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INTELLIJPROJECT.iml" beforeDir="false" afterPath="$PROJECT_DIR$/INTELLIJPROJECT.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/AboveZeroProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/type/AboveZeroProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/BelowZeroProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/type/BelowZeroProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/DisposableProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/type/DisposableProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/LiquidProduct.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/MultiUseProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/type/MultiUseProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/SolidProduct.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/product/CellarModelProduct.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/product/FreezeModelProduct.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/product/FreshModelProduct.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/product/OtherModelProduct.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/product/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/product/ProductCategory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/section/Cellar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/section/Cellar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/section/Freezer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/section/Freezer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/section/Fridge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/section/Fridge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/section/Pantry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/section/Pantry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/section/service/ProductSection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/section/service/ProductSection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SMART-FOOD-STORAGE" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,13 +40,19 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1btPF9u9WjN0V1TDmIiiiCyoEyT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -24,19 +60,24 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../TELEMATICA E CRITTOGRAFIA/ESERCIZI/MONITORNETWORK" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/model/database" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="configurable.group.other" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Alienware 13 R2\Desktop\SMARTFOOD\SMART-FOOD-STORAGE\INTELLIJPROJECT\src\model\database" />
       <recent name="C:\Users\Alienware 13 R2\Documents\MEGA\SUPSI\SEMESTRE 3 4\SEMESTRE 4\INDUSTRIA 4.0\PROGETTO\INTELLIJPROJECT\src" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -44,6 +85,7 @@
       <recent name="model1" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="model.product" />
       <recent name="model" />
     </key>
   </component>
@@ -79,6 +121,8 @@
       <updated>1589448310047</updated>
       <workItem from="1589448313881" duration="33261000" />
       <workItem from="1589541045135" duration="5654000" />
+      <workItem from="1590667422447" duration="6955000" />
+      <workItem from="1590680107612" duration="6999000" />
     </task>
     <servers />
   </component>
@@ -86,46 +130,54 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="524" y="86" key="#com.intellij.ide.util.MemberChooser" timestamp="1589495527365">
+    <state x="524" y="86" key="#com.intellij.ide.util.MemberChooser" timestamp="1590684110146">
       <screen x="0" y="0" width="1418" height="759" />
     </state>
-    <state x="524" y="86" key="#com.intellij.ide.util.MemberChooser/0.0.1418.759@0.0.1418.759" timestamp="1589495527365" />
+    <state x="524" y="86" key="#com.intellij.ide.util.MemberChooser/0.0.1418.759@0.0.1418.759" timestamp="1590684110146" />
     <state x="510" y="264" width="396" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1589460750050">
       <screen x="0" y="0" width="1418" height="759" />
     </state>
     <state x="510" y="264" width="396" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1418.759@0.0.1418.759" timestamp="1589460750050" />
-    <state x="295" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1589541155296">
+    <state x="295" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1590668492419">
       <screen x="0" y="0" width="1418" height="759" />
     </state>
-    <state x="295" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1418.759@0.0.1418.759" timestamp="1589541155296" />
-    <state x="489" y="134" key="FileChooserDialogImpl" timestamp="1589560406161">
+    <state x="295" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1418.759@0.0.1418.759" timestamp="1590668492419" />
+    <state x="439" y="126" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590681915550">
       <screen x="0" y="0" width="1418" height="759" />
     </state>
-    <state x="489" y="134" key="FileChooserDialogImpl/0.0.1418.759@0.0.1418.759" timestamp="1589560406161" />
-    <state width="1374" height="189" key="GridCell.Tab.0.bottom" timestamp="1589499382371">
+    <state x="439" y="126" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1418.759@0.0.1418.759" timestamp="1590681915550" />
+    <state x="489" y="134" key="FileChooserDialogImpl" timestamp="1590667607013">
       <screen x="0" y="0" width="1418" height="759" />
     </state>
-    <state width="1374" height="189" key="GridCell.Tab.0.bottom/0.0.1418.759@0.0.1418.759" timestamp="1589499382371" />
-    <state width="1374" height="189" key="GridCell.Tab.0.center" timestamp="1589499382370">
+    <state x="489" y="134" key="FileChooserDialogImpl/0.0.1418.759@0.0.1418.759" timestamp="1590667607013" />
+    <state width="1374" height="189" key="GridCell.Tab.0.bottom" timestamp="1590673327601">
       <screen x="0" y="0" width="1418" height="759" />
     </state>
-    <state width="1374" height="189" key="GridCell.Tab.0.center/0.0.1418.759@0.0.1418.759" timestamp="1589499382370" />
-    <state width="1374" height="189" key="GridCell.Tab.0.left" timestamp="1589499382369">
+    <state width="1374" height="189" key="GridCell.Tab.0.bottom/0.0.1418.759@0.0.1418.759" timestamp="1590673327601" />
+    <state width="1374" height="189" key="GridCell.Tab.0.center" timestamp="1590673327600">
       <screen x="0" y="0" width="1418" height="759" />
     </state>
-    <state width="1374" height="189" key="GridCell.Tab.0.left/0.0.1418.759@0.0.1418.759" timestamp="1589499382369" />
-    <state width="1374" height="189" key="GridCell.Tab.0.right" timestamp="1589499382370">
+    <state width="1374" height="189" key="GridCell.Tab.0.center/0.0.1418.759@0.0.1418.759" timestamp="1590673327600" />
+    <state width="1374" height="189" key="GridCell.Tab.0.left" timestamp="1590673327599">
       <screen x="0" y="0" width="1418" height="759" />
     </state>
-    <state width="1374" height="189" key="GridCell.Tab.0.right/0.0.1418.759@0.0.1418.759" timestamp="1589499382370" />
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1589541045169">
+    <state width="1374" height="189" key="GridCell.Tab.0.left/0.0.1418.759@0.0.1418.759" timestamp="1590673327599" />
+    <state width="1374" height="189" key="GridCell.Tab.0.right" timestamp="1590673327600">
       <screen x="0" y="0" width="1418" height="759" />
     </state>
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1418.759@0.0.1418.759" timestamp="1589541045169" />
-    <state x="451" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1589479835357">
+    <state width="1374" height="189" key="GridCell.Tab.0.right/0.0.1418.759@0.0.1418.759" timestamp="1590673327600" />
+    <state x="189" y="0" key="SettingsEditor" timestamp="1590667612899">
       <screen x="0" y="0" width="1418" height="759" />
     </state>
-    <state x="451" y="0" key="refactoring.ChangeSignatureDialog/0.0.1418.759@0.0.1418.759" timestamp="1589479835357" />
+    <state x="189" y="0" key="SettingsEditor/0.0.1418.759@0.0.1418.759" timestamp="1590667612899" />
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1590680107602">
+      <screen x="0" y="0" width="1418" height="759" />
+    </state>
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1418.759@0.0.1418.759" timestamp="1590680107602" />
+    <state x="451" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1590683904547">
+      <screen x="0" y="0" width="1418" height="759" />
+    </state>
+    <state x="451" y="0" key="refactoring.ChangeSignatureDialog/0.0.1418.759@0.0.1418.759" timestamp="1590683904547" />
     <state x="366" y="170" width="672" height="677" key="run.anything.popup" timestamp="1589464574289">
       <screen x="0" y="0" width="1418" height="759" />
     </state>

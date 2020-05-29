@@ -1,21 +1,25 @@
-package model.section;
+package repository;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import model.database.Database;
+import database.Database;
 import model.product.Product;
-import model.product.ProductFreezable;
 import model.product.ProductPantriable;
-import model.section.service.ProductSection;
+import repository.crudservice.CrudRepository;
 
-public class Pantry implements ProductSection<ProductPantriable> {
+public class PantryRepository implements CrudRepository<ProductPantriable> {
+    private static PantryRepository instance;
     private final Set<ProductPantriable> allProducts;
     private final Database database;
 
-    public Pantry(){
+    private PantryRepository(){
         this.database = Database.getInstance();
         this.allProducts =new HashSet<>();
+    }
+
+    public static PantryRepository getInstance() {
+        return (instance==null)?(instance=new PantryRepository()):instance;
     }
 
     @Override
@@ -37,17 +41,12 @@ public class Pantry implements ProductSection<ProductPantriable> {
                     .filter(newProduct::equals).findFirst().orElse(null);
 
         if(found!=null) {
-            found.setQuantity(found.getQuantity() + 1);
+            found.setQuantity(found.getQuantity() + newProduct.getQuantity());
             database.savePantryProduct(found);
             return true;
         }
         database.savePantryProduct(newProduct);
         return allProducts.add((ProductPantriable) newProduct);
-    }
-
-    @Override
-    public ProductPantriable getRandomType() {
-        return null;
     }
 
     @Override

@@ -1,21 +1,11 @@
-package model.database;
+package database;
 
 import ch.industry4_0.dm.FieldDesc;
 import ch.industry4_0.dm.Measurement;
 import ch.industry4_0.exception.DatabaseSessionException;
 import ch.industry4_0.influx.connector.InfluxConnector;
 import model.product.*;
-import org.influxdb.dto.Query;
 
-/**
- * Quando si vuole determinare la tipologia del prodotto si guarda l'ultimo numero del barcode modulto 6:
- * 0: AboveZeroProduct
- * 1: BelowZeroProduct
- * 2: DisposableProduct
- * 3: LiquidProduct
- * 4: MultiUseProduct
- * 5: SolidProduct
- */
 public class Database {
     private final static String LOCAL_HOST_PORT="http://127.0.0.1:8086";
     private final static String DB_NAME="smartfoodstoragedb";
@@ -81,18 +71,18 @@ public class Database {
     };
 
     public <T extends Product> void saveCellarProduct(final T product, final double light){
-        cellar.save(product.getBarCode(),product.getQuantity(),  product.getDescription(), product.getWeight(),light);
+        cellar.save(product.getBarCode(),product.getQuantity(),  product.getDescription(), product.getWeight(),light,product.getProductType());
     }
 
     public <T extends Product> void saveFreezeProduct(final T product, final double temperature){
-        freezer.save(product.getBarCode(),product.getQuantity(),  product.getDescription(), product.getWeight(),temperature);
+        freezer.save(product.getBarCode(),product.getQuantity(),product.getDescription(), product.getWeight(),temperature, product.getProductType());
     }
 
     public <T extends Product> void saveFridgeProduct(final T product, final double temperature){
-        fridge.save(product.getBarCode(),product.getQuantity(),  product.getDescription(), product.getWeight(),temperature);
+        fridge.save(product.getBarCode(),product.getQuantity(),product.getDescription(), product.getWeight(),temperature,product.getProductType());
     }
 
     public <T extends Product> void savePantryProduct(final T product){
-        fridge.save(product.getBarCode(),product.getQuantity(),  product.getDescription(), product.getWeight());
+        fridge.save(product.getBarCode(),product.getQuantity(),product.getDescription(), product.getWeight(),product.getProductType());
     }
 }

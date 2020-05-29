@@ -1,22 +1,27 @@
-package model.section;
+package repository;
 
-import model.database.Database;
+import database.Database;
 import model.product.Product;
 import model.product.ProductCellarable;
-import model.section.service.ProductSection;
+import repository.crudservice.CrudRepository;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Cellar implements ProductSection<ProductCellarable> {
+public class CellarRepository implements CrudRepository<ProductCellarable> {
+    private static CellarRepository instance;
     private double light;
     private final Set<ProductCellarable> allProducts;
     private final Database database;
     private final int NUMBER_OF_TYPES=2;
 
-    public Cellar(final double initialLight){
+    private CellarRepository(final double initialLight){
         database=Database.getInstance();
         this.allProducts =new HashSet<>();
         this.light=initialLight;
+    }
+
+    public static CellarRepository getInstance() {
+        return instance==null?(instance=new CellarRepository(0)):instance;
     }
 
     public double getLight() {
@@ -48,7 +53,7 @@ public class Cellar implements ProductSection<ProductCellarable> {
                     .filter(newProduct::equals).findFirst().orElse(null);
 
         if(found!=null) {
-            found.setQuantity(found.getQuantity() + 1);
+            found.setQuantity(found.getQuantity() + newProduct.getQuantity());
             database.saveCellarProduct(found, light);
             return true;
         }
@@ -56,10 +61,6 @@ public class Cellar implements ProductSection<ProductCellarable> {
         return allProducts.add((ProductCellarable) newProduct);
     }
 
-    @Override
-    public ProductCellarable getRandomType() {
-        return
-    }
 
     @Override
     public String toString() {

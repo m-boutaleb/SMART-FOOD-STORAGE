@@ -1,5 +1,6 @@
 package main;
 
+import ch.industry4_0.influx.connector.InfluxConnector;
 import ch.suspi.simulator.grove.GrovePiSimulator;
 import ch.suspi.simulator.sensors.digital.button.ButtonSimulator;
 import ch.suspi.simulator.sensors.digital.led.LedSimulator;
@@ -9,14 +10,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import service.ProductService;
-import model.type.AboveZeroProduct;
+import model.product.type.AboveZeroProduct;
 import org.iot.raspberry.grovepi.GrovePi;
 import org.iot.raspberry.grovepi.sensors.i2c.GroveRgbLcd;
 import org.iot.raspberry.grovepi.sensors.synch.SensorMonitor;
+import service.implementation.ProductServiceImpl;
 
 public class Test {
     public static void main(String[] args) throws Exception {
         GrovePi grovePi =initLoggerAndGetGrovePi();
+        InfluxConnector ic= InfluxConnector.getInstance();
+
+        CellarController
 
         LedSimulator emergencyLightRed = new LedSimulator(grovePi,3);
         LedSimulator okLightGreen = new LedSimulator(grovePi,2);
@@ -42,15 +47,24 @@ public class Test {
         lcdFridge.setRGB(255,0,0);
         lcdCellar.setRGB(255,0,0);
 
-        ProductService productService= new ProductServiceImpl.getInstance();
 
 
 
 
 
 
-        System.out.println(new AboveZeroProduct(214123413l, "ciao", 33, 33.2));
 
+
+        ProductService productService= ProductServiceImpl.getInstance();
+        productService.productByBarcodeAndSave(32451525L, 241.2);
+
+
+        System.out.println(new AboveZeroProduct(35413413L, "Pasta al sugo", 2341,AboveZeroProduct.class.getName()));
+
+
+
+
+        ic.close();
     }
 
     private static GrovePi initLoggerAndGetGrovePi() {

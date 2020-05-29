@@ -1,24 +1,29 @@
-package model.section;
+package repository;
 
-import model.database.Database;
+import database.Database;
 import model.product.Product;
-import model.product.ProductFreezable;
 import model.product.ProductFreshable;
-import model.section.service.ProductSection;
+import repository.crudservice.CrudRepository;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class Fridge implements ProductSection<ProductFreshable> {
+public class FridgeRepository implements CrudRepository<ProductFreshable> {
+    private static FridgeRepository instance;
     private final Set<ProductFreshable> allProducts;
     private double temperature;
     private final Database database;
 
-    public Fridge(final double initialTemperature ){
+    private FridgeRepository(final double initialTemperature ){
         database=Database.getInstance();
         this.allProducts =new HashSet<>();
         this.temperature=initialTemperature;
     }
+
+    public static FridgeRepository getInstance() {
+        return instance==null?(instance=new FridgeRepository(0)):instance;
+    }
+
     public void setTemperature(double temperature) {
         this.temperature = temperature;
     }
@@ -46,17 +51,12 @@ public class Fridge implements ProductSection<ProductFreshable> {
                     .filter(newProduct::equals).findFirst().orElse(null);
 
         if(found!=null) {
-            found.setQuantity(found.getQuantity() + 1);
+            found.setQuantity(found.getQuantity() + newProduct.getQuantity());
             database.saveFridgeProduct(found, temperature);
             return true;
         }
         database.saveFridgeProduct(newProduct, temperature);
         return allProducts.add((ProductFreshable) newProduct);
-    }
-
-    @Override
-    public ProductFreshable getRandomType() {
-        return null;
     }
 
     @Override

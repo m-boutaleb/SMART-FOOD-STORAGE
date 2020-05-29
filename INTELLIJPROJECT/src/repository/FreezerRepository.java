@@ -1,23 +1,28 @@
-package model.section;
+package repository;
 
-import model.database.Database;
+import database.Database;
 import model.product.Product;
 import model.product.ProductFreezable;
-import model.section.service.ProductSection;
+import repository.crudservice.CrudRepository;
 
 import java.util.ArrayList;
 
-public class Freezer implements ProductSection<ProductFreezable> {
+public class FreezerRepository implements CrudRepository<ProductFreezable> {
+    private static FreezerRepository instance;
     private final ArrayList<ProductFreezable> allProducts;
     private final Database database;
     private double temperature;
 
-    public Freezer(final double initialTemperature){
+    private FreezerRepository(final double initialTemperature){
         database=Database.getInstance();
         this.temperature=initialTemperature;
         allProducts =new ArrayList<>();
     }
-    
+
+    public static FreezerRepository getInstance() {
+        return instance==null?(instance=new FreezerRepository(0)):instance;
+    }
+
     public void setTemperature(Double temperature) {
         this.temperature = temperature;
     }
@@ -45,17 +50,12 @@ public class Freezer implements ProductSection<ProductFreezable> {
                     .filter(newProduct::equals).findFirst().orElse(null);
 
         if(found!=null) {
-            found.setQuantity(found.getQuantity() + 1);
+            found.setQuantity(found.getQuantity() + newProduct.getQuantity());
             database.saveFreezeProduct(found, temperature);
             return true;
         }
         database.saveFreezeProduct(newProduct, temperature);
         return allProducts.add((ProductFreezable) newProduct);
-    }
-
-    @Override
-    public ProductFreezable getRandomType() {
-        return null;
     }
 
     @Override

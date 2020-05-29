@@ -2,40 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d62a2d8e-293c-432f-8cca-56fb10b8df75" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/SensorSimulator_1_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/product/ProductCellarable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/product/ProductFreezable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/product/ProductFreshable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/product/ProductPantriable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/type/LiquidProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/type/SolidProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/product/type/AboveZeroProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/product/type/DisposableProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/product/type/FermentedProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/product/type/MultiUseProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repository/crudservice/CrudRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/INTELLIJPROJECT.iml" beforeDir="false" afterPath="$PROJECT_DIR$/INTELLIJPROJECT.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/AboveZeroProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/type/AboveZeroProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/BelowZeroProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/type/BelowZeroProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/DisposableProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/type/DisposableProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/LiquidProduct.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/MultiUseProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/type/MultiUseProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/SolidProduct.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/product/CellarModelProduct.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/product/FreezeModelProduct.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/product/FreshModelProduct.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/product/OtherModelProduct.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Database.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/product/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/product/ProductCategory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/section/Cellar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/section/Cellar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/section/Freezer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/section/Freezer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/section/Fridge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/section/Fridge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/section/Pantry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/section/Pantry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/section/service/ProductSection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/section/service/ProductSection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SMART-FOOD-STORAGE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/section/Cellar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/CellarRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/section/Freezer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/FreezerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/section/Fridge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/FridgeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/section/Pantry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/PantryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/section/service/ProductSection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/type/AboveZeroProduct.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/type/BelowZeroProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/product/type/BelowZeroProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/type/DisposableProduct.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/type/FermentedProduct.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/type/LiquidProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/product/type/LiquidProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/type/MultiUseProduct.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/type/SolidProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/product/type/SolidProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/implementation/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/implementation/ProductServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -123,6 +131,7 @@
       <workItem from="1589541045135" duration="5654000" />
       <workItem from="1590667422447" duration="6955000" />
       <workItem from="1590680107612" duration="6999000" />
+      <workItem from="1590699085295" duration="11967000" />
     </task>
     <servers />
   </component>
@@ -130,10 +139,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="524" y="86" key="#com.intellij.ide.util.MemberChooser" timestamp="1590684110146">
+    <state x="524" y="86" key="#com.intellij.ide.util.MemberChooser" timestamp="1590702784612">
       <screen x="0" y="0" width="1418" height="759" />
     </state>
-    <state x="524" y="86" key="#com.intellij.ide.util.MemberChooser/0.0.1418.759@0.0.1418.759" timestamp="1590684110146" />
+    <state x="524" y="86" key="#com.intellij.ide.util.MemberChooser/0.0.1418.759@0.0.1418.759" timestamp="1590702784612" />
     <state x="510" y="264" width="396" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1589460750050">
       <screen x="0" y="0" width="1418" height="759" />
     </state>
@@ -170,17 +179,21 @@
       <screen x="0" y="0" width="1418" height="759" />
     </state>
     <state x="189" y="0" key="SettingsEditor/0.0.1418.759@0.0.1418.759" timestamp="1590667612899" />
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1590680107602">
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1590699085505">
       <screen x="0" y="0" width="1418" height="759" />
     </state>
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1418.759@0.0.1418.759" timestamp="1590680107602" />
-    <state x="451" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1590683904547">
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1418.759@0.0.1418.759" timestamp="1590699085505" />
+    <state x="451" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1590763423719">
       <screen x="0" y="0" width="1418" height="759" />
     </state>
-    <state x="451" y="0" key="refactoring.ChangeSignatureDialog/0.0.1418.759@0.0.1418.759" timestamp="1590683904547" />
+    <state x="451" y="0" key="refactoring.ChangeSignatureDialog/0.0.1418.759@0.0.1418.759" timestamp="1590763423719" />
     <state x="366" y="170" width="672" height="677" key="run.anything.popup" timestamp="1589464574289">
       <screen x="0" y="0" width="1418" height="759" />
     </state>
     <state x="366" y="170" width="672" height="677" key="run.anything.popup/0.0.1418.759@0.0.1418.759" timestamp="1589464574289" />
+    <state x="371" y="80" width="672" height="678" key="search.everywhere.popup" timestamp="1590764295922">
+      <screen x="0" y="0" width="1418" height="759" />
+    </state>
+    <state x="371" y="80" width="672" height="678" key="search.everywhere.popup/0.0.1418.759@0.0.1418.759" timestamp="1590764295922" />
   </component>
 </project>

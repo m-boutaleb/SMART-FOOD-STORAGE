@@ -2,32 +2,20 @@ package model.product;
 
 import java.util.Objects;
 
-/**
- * Associazione prodotto sezione avviene tramite i primi numeri del product-barcode. Se il bar-code
- * ha come primo elemento un numero compreso tra 0-3 ed e' diverso da uno incontrato precedentemente
- * allora vuoldire che appartiene alla categoria n dove n[0-3]:
- * 0: FreezeProduct
- * 1: FreshProduct
- * 2: CellarProduct
- * 3: OtherProduct
- */
 public abstract class Product {
     private final long barCode;
     private final String description;
     private int quantity;
     private final double weight;
-    private final String productType;
 
-    protected Product(final long barCode, final String description, final double weight, final String productType) {
+    protected Product(final long barCode, final String description, final double weight,final int quantity) {
         this.barCode = barCode;
         this.description = description;
         this.weight = weight;
-        this.productType = productType;
+        this.quantity=quantity;
     }
 
-    public String getProductType() {
-        return productType;
-    }
+    public abstract String getProductType();
 
     public double getWeight() {
         return weight;

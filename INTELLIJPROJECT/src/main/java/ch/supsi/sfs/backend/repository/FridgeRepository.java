@@ -73,7 +73,7 @@ public class FridgeRepository implements CrudRepository<ProductFreshable> {
     }
 
     private double getTotalWeight() {
-        return allProducts.stream().map(p->(Product)p).mapToDouble(Product::getWeight).sum();
+        return allProducts.stream().map(p->(Product)p).parallel().mapToDouble(p->p.getWeight()*p.getQuantity()).sum();
     }
 
     @Override

@@ -46,6 +46,7 @@ public class DemoTest {
             stationController.checkAllRepos();
         }
         Database.getInstance().closeConnection();
+
     }
 
     private static void checkEmergencyStop(final ButtonSimulator emergencyStop) {

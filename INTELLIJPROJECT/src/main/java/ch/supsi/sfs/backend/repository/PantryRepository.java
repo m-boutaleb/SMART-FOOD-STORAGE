@@ -73,6 +73,7 @@ public class PantryRepository implements CrudRepository<ProductPantriable> {
             int currentQty=productFound.getQuantity();
             if(currentQty==0)
                 return false;
+            productFound.incrementConsummation();
             productFound.setQuantity(currentQty-((int)(Math.random() * currentQty + 1)));
             database.savePantryProduct(productFound);
         }

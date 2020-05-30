@@ -7,15 +7,25 @@ public abstract class Product {
     private final String description;
     private int quantity;
     private final double weight;
+    private int consummation;
 
     protected Product(final String barCode, final String description, final double weight,final int quantity) {
         this.barCode = barCode;
         this.description = description;
         this.weight = weight;
         this.quantity=quantity;
+        consummation=0;
     }
 
     public abstract String getProductType();
+
+    public int getConsummation() {
+        return consummation;
+    }
+
+    public void incrementConsummation(){
+        this.consummation++;
+    }
 
     public double getWeight() {
         return weight;
@@ -45,6 +55,7 @@ public abstract class Product {
                 ", quantity=" + quantity +
                 ", weight=" + weight +
                 ", type="+ getProductType()+
+                ", consummation: "+ getConsummation()+
                 '}';
     }
 

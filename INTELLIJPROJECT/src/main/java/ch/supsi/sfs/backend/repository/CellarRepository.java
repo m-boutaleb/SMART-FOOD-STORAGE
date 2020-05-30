@@ -84,6 +84,7 @@ public class CellarRepository implements CrudRepository<ProductCellarable> {
             if(currentQty==0)
                 return false;
             productFound.setQuantity(currentQty-((int)(Math.random() * currentQty + 1)));
+            productFound.incrementConsummation();
             database.saveCellarProduct(productFound, light);
         }
         return found;

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import static ch.supsi.sfs.backend.utils.RepositoryUtils.FREEZER_MAX_WEIGHT;
 import static ch.supsi.sfs.backend.utils.RepositoryUtils.MAX_FREEZER_TEMPERATURE;
 
-public class FreezerRepository implements CrudRepository<ProductFreezable> {
+public class FreezerRepository implements CrudRepository<ProductFreezable>, Weightable {
     private static FreezerRepository instance;
     private final ArrayList<ProductFreezable> allProducts;
     private final Database database;
@@ -68,22 +68,25 @@ public class FreezerRepository implements CrudRepository<ProductFreezable> {
         return new int[]{totalWeight>FREEZER_MAX_WEIGHT?2:totalWeight==0?0:1, temperature>MAX_FREEZER_TEMPERATURE?0:1};
     }
 
-    private double getTotalWeight() {
-        return allProducts.stream().map(p->(Product)p).mapToDouble(Product::getWeight).sum();
+    @Override
+    public double getTotalWeight() {
+        return allProducts.stream().map(p->(Product)p).parallel().mapToDouble(p->p.getWeight()*p.getQuantity()).sum();
     }
 
     @Override
     public boolean remove(final String barcode) {
-        final boolean found=allProducts.contains(new LiquidProduct(barcode, "", 234, 1234, 213, 324));
+        final Product sameProduct=new LiquidProduct(barcode, "", 234, 1234, 213, 324);
+        final boolean found=allProducts.contains(sameProduct);
         System.out.println((found?"Find element in freezer measurements":"Element not found in freezer measurements"));
         if(found){
             final Product productFound=allProducts.stream().parallel().
-                    map(p->(Product)p).filter(p->barcode.equals(p.getBarCode())).findFirst().orElse(null);
+                    map(p->(Product)p).filter(sameProduct::equals).findFirst().orElse(null);
             int currentQty=productFound.getQuantity();
             if(currentQty==0)
                 return false;
+            int qtyToRemove=(int)(Math.random() * currentQty + 1);
+            productFound.setQuantity(currentQty-qtyToRemove);
             productFound.incrementConsummation();
-            productFound.setQuantity(currentQty-((int)(Math.random() * currentQty + 1)));
             database.saveFreezeProduct(productFound, temperature);
         }
         return found;

@@ -5,8 +5,8 @@ import java.util.Objects;
 public abstract class Product {
     private final String barCode;
     private final String description;
-    private int quantity;
     private final double weight;
+    private int quantity;
     private int consummation;
 
     protected Product(final String barCode, final String description, final double weight,final int quantity) {
@@ -69,6 +69,6 @@ public abstract class Product {
 
     @Override
     public int hashCode() {
-        return Objects.hash(barCode, description, quantity, weight);
+        return Objects.hash(barCode);
     }
 }

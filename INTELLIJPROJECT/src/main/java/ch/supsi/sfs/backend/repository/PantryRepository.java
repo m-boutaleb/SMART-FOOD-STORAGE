@@ -10,7 +10,7 @@ import ch.supsi.sfs.backend.model.product.type.LiquidProduct;
 
 import static ch.supsi.sfs.backend.utils.RepositoryUtils.PANTRY_MAX_QTY;
 
-public class PantryRepository implements CrudRepository<ProductPantriable> {
+public class PantryRepository implements CrudRepository<ProductPantriable>, Countable {
     private static PantryRepository instance;
     private final Set<ProductPantriable> allProducts;
     private final Database database;
@@ -59,22 +59,25 @@ public class PantryRepository implements CrudRepository<ProductPantriable> {
         return new int[]{(totalQty)>PANTRY_MAX_QTY?2:totalQty==0?0:1, 1};
     }
 
-    private int getTotalQty() {
+    @Override
+    public int getTotalQty() {
         return allProducts.stream().parallel().map(p->(Product)p).mapToInt(Product::getQuantity).sum();
     }
 
     @Override
     public boolean remove(final String barcode) {
-        final boolean found=allProducts.contains(new LiquidProduct(barcode, "", 234, 1234, 213, 324));
+        final Product sameProduct=new LiquidProduct(barcode, "", 234, 1234, 213, 324);
+        final boolean found=allProducts.contains(sameProduct);
         System.out.println((found?"Find element in pantry measurements":"Element not found in pantry measurements"));
         if(found){
             final Product productFound=allProducts.stream().parallel().
-                    map(p->(Product)p).filter(p->barcode.equals(p.getBarCode())).findFirst().orElse(null);
+                    map(p->(Product)p).filter(sameProduct::equals).findFirst().orElse(null);
             int currentQty=productFound.getQuantity();
             if(currentQty==0)
                 return false;
+            int qtyToRemove=(int)(Math.random() * currentQty + 1);
+            productFound.setQuantity(currentQty-qtyToRemove);
             productFound.incrementConsummation();
-            productFound.setQuantity(currentQty-((int)(Math.random() * currentQty + 1)));
             database.savePantryProduct(productFound);
         }
         return found;

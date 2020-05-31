@@ -16,7 +16,7 @@ import org.iot.raspberry.grovepi.sensors.synch.SensorMonitor;
 public class DemoTest {
     public static final GrovePi GROVE_PI =initLoggerAndGetGrovePi();
     public static final double NEW_PRODUCT_DETECTED=20;
-    public static final int LATENCY=100;
+    public static final int LATENCY=300;
     public static boolean stationClosed=false;
 
     public static void main(String[] args) throws Exception {

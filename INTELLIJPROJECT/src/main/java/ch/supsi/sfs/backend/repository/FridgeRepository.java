@@ -3,17 +3,15 @@ package ch.supsi.sfs.backend.repository;
 import ch.supsi.sfs.backend.database.Database;
 import ch.supsi.sfs.backend.model.product.Product;
 import ch.supsi.sfs.backend.model.product.ProductFreshable;
-import ch.supsi.sfs.backend.model.product.type.FermentedProduct;
 import ch.supsi.sfs.backend.model.product.type.LiquidProduct;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.concurrent.ThreadLocalRandom;
 
 import static ch.supsi.sfs.backend.utils.RepositoryUtils.FRIDGE_MAX_WEIGHT;
 import static ch.supsi.sfs.backend.utils.RepositoryUtils.MAX_FRIDGE_TEMPERATURE;
 
-public class FridgeRepository implements CrudRepository<ProductFreshable> {
+public class FridgeRepository implements CrudRepository<ProductFreshable>, Weightable {
     private static FridgeRepository instance;
     private final Set<ProductFreshable> allProducts;
     private double temperature;
@@ -72,7 +70,8 @@ public class FridgeRepository implements CrudRepository<ProductFreshable> {
         return new int[]{totalWeight>FRIDGE_MAX_WEIGHT?2:totalWeight==0?0:1, temperature>MAX_FRIDGE_TEMPERATURE?0:1};
     }
 
-    private double getTotalWeight() {
+    @Override
+    public double getTotalWeight() {
         return allProducts.stream().map(p->(Product)p).parallel().mapToDouble(p->p.getWeight()*p.getQuantity()).sum();
     }
 

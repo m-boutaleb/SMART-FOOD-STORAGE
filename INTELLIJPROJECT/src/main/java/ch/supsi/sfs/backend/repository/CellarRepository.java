@@ -4,7 +4,6 @@ import ch.supsi.sfs.backend.database.Database;
 import ch.supsi.sfs.backend.model.product.Product;
 import ch.supsi.sfs.backend.model.product.ProductCellarable;
 import ch.supsi.sfs.backend.model.product.type.FermentedProduct;
-import ch.supsi.sfs.backend.model.product.type.LiquidProduct;
 import java.util.HashSet;
 import java.util.Set;
 

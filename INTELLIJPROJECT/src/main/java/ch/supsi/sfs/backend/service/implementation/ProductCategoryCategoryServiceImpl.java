@@ -105,8 +105,7 @@ public class ProductCategoryCategoryServiceImpl implements ProductCategoryServic
 
     @Override
     public Product productByBarcodeAndSave(final String barcode, final double weight) {
-        final String stringValue=String.valueOf(barcode);
-        final int type=Integer.parseInt(String.valueOf(stringValue.charAt(NR_BARCODENUMBERS-1)));
+        final int type=Integer.parseInt(String.valueOf(barcode.charAt(NR_BARCODENUMBERS-1)))%7;
         return generateRandomProduct(type, barcode, weight);
     }
 
@@ -116,10 +115,10 @@ public class ProductCategoryCategoryServiceImpl implements ProductCategoryServic
         boolean added;
         switch(type) {
             case 0:
-                freezerRepository.add(new AboveZeroProduct(barcode, getRandomAZPDesc(), weight, getRandomQuantity(), getRandomFreezeTemp()));
+                freezerRepository.add(new BelowZeroProduct(barcode, getRandomAZPDesc(), weight, getRandomQuantity(), getRandomFreezeTemp()));
                 break;
             case 1:
-                final BelowZeroProduct newBZProd=new BelowZeroProduct(barcode, getRandomBZPDesc(), weight, getRandomQuantity(), getRandomFreshTemp());
+                final AboveZeroProduct newBZProd=new AboveZeroProduct(barcode, getRandomBZPDesc(), weight, getRandomQuantity(), getRandomFreshTemp());
                 added=randNr==1?pantryRepository.add(newBZProd):fridgeRepository.add(newBZProd);
                 break;
             case 2:

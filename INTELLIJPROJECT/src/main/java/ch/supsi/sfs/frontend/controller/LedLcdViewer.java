@@ -41,7 +41,7 @@ public class LedLcdViewer {
             return;
         }
         final String[] OUTPUT_STATUS=new String[]{"EMPTY", "", "FULL"};
-        lcdPantry.setText("FRIDGE STATUS:"+OUTPUT_STATUS[result[0]]);
+        lcdPantry.setText("PANTRY STATUS:"+OUTPUT_STATUS[result[0]]);
     }
 
     public void showFridgeResult(final int... result) throws IOException {

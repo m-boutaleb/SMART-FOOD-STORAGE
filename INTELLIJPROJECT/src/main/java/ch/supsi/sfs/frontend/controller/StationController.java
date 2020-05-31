@@ -55,10 +55,6 @@ public class StationController {
         return instance==null?(instance=new StationController()):instance;
     }
 
-    public double getWeigherValue(){
-        return weigher.getValue();
-    }
-
     public void checkAllRepos(){
         try {
             ledLcdViewer.showPantryResult(storageController.checkPantryStatus());

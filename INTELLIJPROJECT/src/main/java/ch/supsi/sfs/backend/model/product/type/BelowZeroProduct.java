@@ -1,21 +1,20 @@
 package ch.supsi.sfs.backend.model.product.type;
 
 import ch.supsi.sfs.backend.model.product.Product;
-import ch.supsi.sfs.backend.model.product.ProductFreshable;
-import ch.supsi.sfs.backend.model.product.ProductPantriable;
+import ch.supsi.sfs.backend.model.product.ProductFreezable;
 
-public class BelowZeroProduct extends Product implements ProductPantriable, ProductFreshable {
-    private final double freshTemperature;
+public class BelowZeroProduct extends Product implements ProductFreezable {
+    private final double freezableTemperature;
 
-    public BelowZeroProduct(final String barCode, final String description, final double weight, final int quantity, final double freshTemperature) {
+    public BelowZeroProduct(final String barCode, final String description, final double weight, final int quantity, final double freezableTemperature) {
         super(barCode, description, weight, quantity);
-        this.freshTemperature = freshTemperature;
+        this.freezableTemperature=freezableTemperature;
     }
 
 
     @Override
-    public double getFreshTemperature() {
-        return freshTemperature;
+    public double getFreezableTemperature() {
+        return freezableTemperature;
     }
 
     @Override

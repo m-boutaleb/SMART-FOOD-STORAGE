@@ -41,12 +41,11 @@ public class DemoTest {
                 stationController.genBarcodeStatusAndSave();
             if(productDetected(exitRangerValue))
                 stationController.getBarcodeAndRemove();
-            Thread.sleep(LATENCY);
             checkEmergencyStop(emergencyStop);
             stationController.checkAllRepos();
+            Thread.sleep(LATENCY);
         }
         Database.getInstance().closeConnection();
-
     }
 
     private static void checkEmergencyStop(final ButtonSimulator emergencyStop) {

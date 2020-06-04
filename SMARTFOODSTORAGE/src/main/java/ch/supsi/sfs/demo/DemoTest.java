@@ -43,6 +43,7 @@ public class DemoTest {
                 stationController.getBarcodeAndRemove();
             checkEmergencyStop(emergencyStop);
             stationController.checkAllRepos();
+            stationController.genRepositoryRandomValues();
             Thread.sleep(LATENCY);
         }
         Database.getInstance().closeConnection();

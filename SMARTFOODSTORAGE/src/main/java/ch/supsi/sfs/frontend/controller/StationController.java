@@ -38,17 +38,25 @@ public class StationController {
         weigher.start();
     }
 
-    public void genBarcodeStatusAndSave(){
+    public void genRepositoryRandomValues(){
         try {
             if(ThreadLocalRandom.current().nextInt(0, 11)%2==0) {
                 storageController.setCellarLight(cellarLight.get());
                 storageController.setFreezerTemp(temperatureFrizzer.get().getTemperature());
                 storageController.setFridgeTemp(temperatureFridge.get().getTemperature());
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void genBarcodeStatusAndSave(){
+        try {
             storageController.saveProduct(barcodeGenerator.get().getText(), weigher.getValue());
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
     public static StationController getInstance() {

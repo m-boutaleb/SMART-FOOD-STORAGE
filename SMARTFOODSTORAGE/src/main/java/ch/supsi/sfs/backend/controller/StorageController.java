@@ -1,14 +1,14 @@
 package ch.supsi.sfs.backend.controller;
 
 import ch.supsi.sfs.backend.service.ProductCategoryService;
-import ch.supsi.sfs.backend.service.implementation.ProductCategoryCategoryServiceImpl;
+import ch.supsi.sfs.backend.service.implementation.ProductCategoryServiceImpl;
 
 public class StorageController {
     private ProductCategoryService productCategoryService;
     private static StorageController instance;
 
     private StorageController(){
-        productCategoryService = ProductCategoryCategoryServiceImpl.getInstance();
+        productCategoryService = ProductCategoryServiceImpl.getInstance();
     }
 
     public static StorageController getInstance() {

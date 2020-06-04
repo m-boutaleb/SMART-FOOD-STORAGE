@@ -4,6 +4,8 @@ import ch.supsi.sfs.backend.database.Database;
 import ch.supsi.sfs.backend.model.product.Product;
 import ch.supsi.sfs.backend.model.product.ProductFreshable;
 import ch.supsi.sfs.backend.model.product.type.LiquidProduct;
+import ch.supsi.sfs.backend.repository.property.CrudRepository;
+import ch.supsi.sfs.backend.repository.property.Weightable;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -33,11 +35,6 @@ public class FridgeRepository implements CrudRepository<ProductFreshable>, Weigh
     
     public double getTemperature() {
         return temperature;
-    }
-
-    @Override
-    public void printAllElements() {
-        allProducts.forEach(System.out::println);
     }
 
     @Override

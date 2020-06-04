@@ -1,4 +1,4 @@
-package ch.supsi.sfs.backend.repository;
+package ch.supsi.sfs.backend.repository.property;
 
 public interface Countable {
     int getTotalQty();

@@ -24,14 +24,14 @@ import static ch.supsi.sfs.backend.utils.ProductUtils.*;
  * 5: MultiUseProduct
  * 6: SolidProduct
  */
-public class ProductCategoryCategoryServiceImpl implements ProductCategoryService {
-    private static ProductCategoryCategoryServiceImpl instance;
+public class ProductCategoryServiceImpl implements ProductCategoryService {
+    private static ProductCategoryServiceImpl instance;
     private final PantryRepository pantryRepository;
     private final CellarRepository cellarRepository;
     private final FreezerRepository freezerRepository;
     private final FridgeRepository fridgeRepository;
 
-    private ProductCategoryCategoryServiceImpl() {
+    private ProductCategoryServiceImpl() {
         pantryRepository=PantryRepository.getInstance();
         cellarRepository=CellarRepository.getInstance();
         freezerRepository=FreezerRepository.getInstance();
@@ -100,7 +100,7 @@ public class ProductCategoryCategoryServiceImpl implements ProductCategoryServic
 
 
     public static ProductCategoryService getInstance() {
-        return (instance==null)?(instance=new ProductCategoryCategoryServiceImpl()):instance;
+        return (instance==null)?(instance=new ProductCategoryServiceImpl()):instance;
     }
 
     @Override

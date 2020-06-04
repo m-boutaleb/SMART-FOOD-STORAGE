@@ -7,6 +7,8 @@ import ch.supsi.sfs.backend.database.Database;
 import ch.supsi.sfs.backend.model.product.Product;
 import ch.supsi.sfs.backend.model.product.ProductPantriable;
 import ch.supsi.sfs.backend.model.product.type.LiquidProduct;
+import ch.supsi.sfs.backend.repository.property.Countable;
+import ch.supsi.sfs.backend.repository.property.CrudRepository;
 
 import static ch.supsi.sfs.backend.utils.RepositoryUtils.PANTRY_MAX_QTY;
 
@@ -22,11 +24,6 @@ public class PantryRepository implements CrudRepository<ProductPantriable>, Coun
 
     public static PantryRepository getInstance() {
         return (instance==null)?(instance=new PantryRepository()):instance;
-    }
-
-    @Override
-    public void printAllElements() {
-        allProducts.forEach(System.out::println);
     }
 
     @Override

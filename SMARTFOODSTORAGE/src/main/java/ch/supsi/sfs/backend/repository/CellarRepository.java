@@ -4,6 +4,9 @@ import ch.supsi.sfs.backend.database.Database;
 import ch.supsi.sfs.backend.model.product.Product;
 import ch.supsi.sfs.backend.model.product.ProductCellarable;
 import ch.supsi.sfs.backend.model.product.type.FermentedProduct;
+import ch.supsi.sfs.backend.repository.property.Countable;
+import ch.supsi.sfs.backend.repository.property.CrudRepository;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -32,11 +35,6 @@ public class CellarRepository implements CrudRepository<ProductCellarable>, Coun
 
     public void setLight(Double light) {
         this.light = light;
-    }
-
-    @Override
-    public void printAllElements() {
-        new HashSet<>(allProducts);
     }
 
     @Override

@@ -4,6 +4,9 @@ import ch.supsi.sfs.backend.database.Database;
 import ch.supsi.sfs.backend.model.product.Product;
 import ch.supsi.sfs.backend.model.product.ProductFreezable;
 import ch.supsi.sfs.backend.model.product.type.LiquidProduct;
+import ch.supsi.sfs.backend.repository.property.CrudRepository;
+import ch.supsi.sfs.backend.repository.property.Weightable;
+
 import java.util.ArrayList;
 
 import static ch.supsi.sfs.backend.utils.RepositoryUtils.FREEZER_MAX_WEIGHT;
@@ -31,11 +34,6 @@ public class FreezerRepository implements CrudRepository<ProductFreezable>, Weig
 
     public Double getTemperature() {
         return temperature;
-    }
-
-    @Override
-    public void printAllElements() {
-        allProducts.forEach(System.out::println);
     }
 
     @Override

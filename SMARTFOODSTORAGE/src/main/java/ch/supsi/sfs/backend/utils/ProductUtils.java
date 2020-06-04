@@ -6,10 +6,10 @@ public class ProductUtils {
     public static final int NR_BARCODENUMBERS=12;
     public static final int NR_TYPES=7;
     public static final int MAX_QTY=5;
-    public static final double MIN_FREEZE_TEMPERATURE=-20;
-    public static final double MAX_FREEZE_TEMPERATURE=0;
-    public static final double MIN_FRESH_TEMPERATURE=0;
-    public static final double MAX_FRESH_TEMPERATURE=15;
+    public static final double PRODUCT_MIN_FREEZE_TEMPERATURE =-20;
+    public static final double PRODUCT_MAX_FREEZE_TEMPERATURE =0;
+    public static final double PRODUCT_MIN_FRESH_TEMPERATURE =0;
+    public static final double PRODUCT_MAX_FRESH_TEMPERATURE =15;
     private static final String[] aboveZeroProductsDesc =new String[]{"PIZZA SURGELATA", "SALMONE FRESCO", "POMODORINI FRESCHI"};
     private static final String[] belowZeroProductsDesc =new String[]{"PESCE MERLUZZO", "GELATO ALLA PANNA", "GELATO ALLA PANNA SAMMONTANA", "BIRRA APPENZELLER IPA",};
     private static final String[] disposableProductsDesc =new String[]{"GUANTI MONOUSO", "CARTA IGIENICA", "TOVAGLIOLI"};
@@ -43,9 +43,9 @@ public class ProductUtils {
         return ThreadLocalRandom.current().nextInt(1, MAX_QTY);
     }
     public static double getRandomFreezeTemp(){
-        return ThreadLocalRandom.current().nextDouble(MIN_FREEZE_TEMPERATURE, MAX_FREEZE_TEMPERATURE);
+        return ThreadLocalRandom.current().nextDouble(PRODUCT_MIN_FREEZE_TEMPERATURE, PRODUCT_MAX_FREEZE_TEMPERATURE);
     }
     public static double getRandomFreshTemp() {
-        return ThreadLocalRandom.current().nextDouble(MIN_FRESH_TEMPERATURE, MAX_FRESH_TEMPERATURE);
+        return ThreadLocalRandom.current().nextDouble(PRODUCT_MIN_FRESH_TEMPERATURE, PRODUCT_MAX_FRESH_TEMPERATURE);
     }
 }

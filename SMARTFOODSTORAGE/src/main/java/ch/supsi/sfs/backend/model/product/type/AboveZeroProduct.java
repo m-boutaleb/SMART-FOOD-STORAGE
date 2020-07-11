@@ -5,6 +5,7 @@ import ch.supsi.sfs.backend.model.product.ProductFreshable;
 import ch.supsi.sfs.backend.model.product.ProductPantriable;
 
 public class AboveZeroProduct extends Product implements ProductPantriable, ProductFreshable {
+    //temperature ottimale che il prodotto deve mantenere
     private final double freshTemperature;
 
     public AboveZeroProduct(final String barCode, final String description, final double weight, final int quantity, final double freshTemperature) {

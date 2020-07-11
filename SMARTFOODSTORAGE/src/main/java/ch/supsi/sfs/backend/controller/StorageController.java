@@ -3,6 +3,9 @@ package ch.supsi.sfs.backend.controller;
 import ch.supsi.sfs.backend.service.ProductCategoryService;
 import ch.supsi.sfs.backend.service.implementation.ProductCategoryServiceImpl;
 
+/**
+ * Classe usata dal frontend per interfacciarsi con il backend
+ */
 public class StorageController {
     private ProductCategoryService productCategoryService;
     private static StorageController instance;

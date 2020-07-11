@@ -5,7 +5,9 @@ import ch.supsi.sfs.backend.model.product.ProductFreshable;
 import ch.supsi.sfs.backend.model.product.Product;
 
 public class LiquidProduct extends Product implements ProductFreezable, ProductFreshable {
+    //temperatura che può mantenere nel freezer
     private final double freezableTemperature;
+    //temperature che può mantenere nel frigo
     private final double freshableTemperature;
 
     public LiquidProduct(final String barCode, final String description,

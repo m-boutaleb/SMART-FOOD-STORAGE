@@ -4,6 +4,7 @@ import ch.supsi.sfs.backend.model.product.Product;
 import ch.supsi.sfs.backend.model.product.ProductFreezable;
 
 public class BelowZeroProduct extends Product implements ProductFreezable {
+    //temperature ottimale che il prodotto deve mantenere
     private final double freezableTemperature;
 
     public BelowZeroProduct(final String barCode, final String description, final double weight, final int quantity, final double freezableTemperature) {

@@ -12,18 +12,6 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import static ch.supsi.sfs.backend.utils.ProductUtils.*;
 
-/**
- * Associazione prodotto sezione avviene tramite i primi numeri del product-barcode. Se il bar-code
- * ha come primo elemento un numero compreso tra 0-7 ed e' diverso da uno incontrato precedentemente
- * allora vuoldire che appartiene alla categoria n dove n equivale a:
- * 0: AboveZeroProduct
- * 1: BelowZeroProduct
- * 2: DisposableProduct
- * 3: FermentedProduct
- * 4: LiquidProduct
- * 5: MultiUseProduct
- * 6: SolidProduct
- */
 public class ProductCategoryServiceImpl implements ProductCategoryService {
     private static ProductCategoryServiceImpl instance;
     private final PantryRepository pantryRepository;
@@ -105,7 +93,7 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
 
     @Override
     public Product productByBarcodeAndSave(final String barcode, final double weight) {
-        final int type=Integer.parseInt(String.valueOf(barcode.charAt(NR_BARCODENUMBERS-1)))%7;
+        final int type=Integer.parseInt(String.valueOf(barcode.charAt(NR_BARCODENUMBERS-1)))%NR_TYPES;
         return generateRandomProduct(type, barcode, weight);
     }
 

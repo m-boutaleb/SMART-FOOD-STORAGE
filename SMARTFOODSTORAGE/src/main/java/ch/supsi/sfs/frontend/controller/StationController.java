@@ -10,7 +10,8 @@ import org.iot.raspberry.grovepi.sensors.synch.SensorMonitor;
 import java.io.IOException;
 import java.util.concurrent.ThreadLocalRandom;
 
-import static ch.supsi.sfs.demo.DemoTest.GROVE_PI;
+import static ch.supsi.sfs.backend.utils.RepositoryUtils.*;
+import static ch.supsi.sfs.frontend.demo.DemoTest.GROVE_PI;
 
 public class StationController {
     private static StationController instance;
@@ -18,8 +19,9 @@ public class StationController {
     private RandomBarcodeSimulator barcodeGenerator;
     private SensorMonitor<Double> weigher;
     private LightSensorSimulator cellarLight;
-    private final TemperatureAndHumiditySimulator temperatureFrizzer;
+    private final TemperatureAndHumiditySimulator temperatureFreezer;
     private final TemperatureAndHumiditySimulator temperatureFridge;
+    private static final double RELATIVE_ERROR=10D;
 
     private final LedLcdViewer ledLcdViewer;
 
@@ -27,7 +29,7 @@ public class StationController {
         ledLcdViewer = LedLcdViewer.getInstance();
         storageController=StorageController.getInstance();
         temperatureFridge=new TemperatureAndHumiditySimulator(GROVE_PI, 1, TemperatureAndHumiditySimulator.Type.DHT11);
-        temperatureFrizzer=new TemperatureAndHumiditySimulator(GROVE_PI, 2, TemperatureAndHumiditySimulator.Type.DHT21);
+        temperatureFreezer =new TemperatureAndHumiditySimulator(GROVE_PI, 2, TemperatureAndHumiditySimulator.Type.DHT21);
         try {
             cellarLight=new LightSensorSimulator(GROVE_PI, 3, "Cellar Light Random Generator");
             weigher=new SensorMonitor<Double>(new LoadCellSimulator(GROVE_PI, 6, "Weigher"), 200);
@@ -40,10 +42,16 @@ public class StationController {
 
     public void genRepositoryRandomValues(){
         try {
-            if(ThreadLocalRandom.current().nextInt(0, 11)%2==0) {
-                storageController.setCellarLight(cellarLight.get());
-                storageController.setFreezerTemp(temperatureFrizzer.get().getTemperature());
-                storageController.setFridgeTemp(temperatureFridge.get().getTemperature());
+            if(ThreadLocalRandom.current().nextInt(0, 10)%3==0) {
+                final var fridgeTemp=ThreadLocalRandom.current().nextDouble(MIN_FRIDGE_TEMPERATURE,MAX_FRIDGE_TEMPERATURE+RELATIVE_ERROR);
+                final var freezerTemp=ThreadLocalRandom.current().nextDouble(MIN_FREEZER_TEMPERATURE,MAX_FREEZER_TEMPERATURE+RELATIVE_ERROR);
+                final var cellarValue=ThreadLocalRandom.current().nextDouble(MIN_BRIGHTNESS_VALUE,MAX_BRIGHTNESS_VALUE+RELATIVE_ERROR);
+                temperatureFridge.setTemperature((int)fridgeTemp);
+                temperatureFreezer.setTemperature((int)freezerTemp);
+                cellarLight.setValue((int)cellarValue);
+                storageController.setCellarLight(cellarValue);
+                storageController.setFreezerTemp(freezerTemp);
+                storageController.setFridgeTemp(fridgeTemp);
             }
         } catch (Exception e) {
             e.printStackTrace();

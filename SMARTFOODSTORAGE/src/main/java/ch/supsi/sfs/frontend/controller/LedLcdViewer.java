@@ -4,7 +4,7 @@ import org.iot.raspberry.grovepi.sensors.i2c.GroveRgbLcd;
 
 import java.io.IOException;
 
-import static ch.supsi.sfs.demo.DemoTest.GROVE_PI;
+import static ch.supsi.sfs.frontend.demo.DemoTest.GROVE_PI;
 
 public class LedLcdViewer {
     private GroveRgbLcd lcdFreezer;
@@ -55,6 +55,7 @@ public class LedLcdViewer {
         final String[] OUTPUT_CONDITION=new String[]{"OVER-TEMPERATURE", "", ""};
         lcdFridge.setText("FRIDGE STATUS:"+OUTPUT_STATUS[result[0]]+" "+OUTPUT_CONDITION[result[1]]);
     }
+
     public void showFreezerResult(final int... result) throws IOException {
         boolean ok=result[0]==1&&result[1]==1;
         lcdFreezer.setRGB(ok?0:255,ok?255:0, 0 );

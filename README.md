@@ -19,7 +19,7 @@ The technologies used for the development of this software are as follows:
 - InfluxDB 1.1
  
 ## Screenshots
-![Main Window](./img/main-window.png)
+![Main Window](./img/main-window.PNG)
  
 ## Setup
 To run the system you need to start the influx server and connect to it in port 8086. Once you have run the server you should create the db from command line: 

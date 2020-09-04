@@ -42,3 +42,8 @@ $ java -jar smartfoodstoragedb.jar
 
 ## Contact
 Feel free to contact me at mohamedboutaleb@outlook.it
+
+License
+----
+
+MIT © Mohamed Boutaleb
